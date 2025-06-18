@@ -95,11 +95,11 @@ vplay/
 
 ## 🙋‍♂️ Example Questions You Can Ask the Bot
 
-- Is my profile secure?
-- Can I call someone who is not my friend?
-- Where do I see my friend requests?
-- What notifications do I receive?
-- Can I see my friends list?
+- Is my profile secure?                    | Excepted Answer : "your profile is secured"
+- Can I call someone who is not my friend? | Excepted Answer : "users cannot call someone who is not on their friends list"
+- Where do I see my friend requests?       | Excepted Answer : "notifications where you can accept or reject.friend requests show up in the notification section"
+- What notifications do I receive?         | Excepted Answer : "email notification confirming your account .notifications show new requests and call invitations"
+- Can I see my friends list?               | Excepted Answer : "you can view your friends after logging in."
 
 ---
 
