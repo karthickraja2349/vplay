@@ -1,5 +1,54 @@
 package com.vplay.database;
+/*
+DB DESIGN
+mysql> use vplay;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
 
+Database changed
+mysql> show tables;
++-----------------+
+| Tables_in_vplay |
++-----------------+
+| friend          |
+| notification    |
+| users           |
++-----------------+
+3 rows in set (0.00 sec)
+
+mysql> desc users;
++---------------+--------------+------+-----+---------+----------------+
+| Field         | Type         | Null | Key | Default | Extra          |
++---------------+--------------+------+-----+---------+----------------+
+| user_id       | int          | NO   | PRI | NULL    | auto_increment |
+| userName      | varchar(100) | NO   | UNI | NULL    |                |
+| password      | varchar(255) | YES  |     | NULL    |                |
+| email         | varchar(100) | NO   | UNI | NULL    |                |
+| password_salt | varchar(255) | YES  |     | NULL    |                |
++---------------+--------------+------+-----+---------+----------------+
+5 rows in set (0.01 sec)
+
+mysql> desc friend;
++-----------+------+------+-----+---------+-------+
+| Field     | Type | Null | Key | Default | Extra |
++-----------+------+------+-----+---------+-------+
+| user_id   | int  | NO   | PRI | NULL    |       |
+| friend_id | int  | NO   | PRI | NULL    |       |
++-----------+------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> desc notification;
++-----------------+--------------+------+-----+---------+----------------+
+| Field           | Type         | Null | Key | Default | Extra          |
++-----------------+--------------+------+-----+---------+----------------+
+| notification_id | int          | NO   | PRI | NULL    | auto_increment |
+| sender_name     | varchar(100) | YES  |     | NULL    |                |
+| sender_email    | varchar(100) | YES  |     | NULL    |                |
+| receiver_id     | int          | YES  | MUL | NULL    |                |
+| status          | varchar(20)  | YES  |     | NULL    |                |
++-----------------+--------------+------+-----+---------+----------------+
+
+*/
 public class SQLQueries{
 
        public static final String INSERT_USER = "INSERT INTO users (username, password,email,password_salt) VALUES (?, ?, ?, ?)";
@@ -31,31 +80,7 @@ public class SQLQueries{
       public static final String SEND_FRIEND_REQUEST = 
                                                                      "INSERT INTO notification(sender_name, sender_email, receiver_id, status) Values (?,?,?,?)";
       
-
-
-       
-
     
 }
 
-//type VARCHAR(50), -- e.g., 'friend_request'
-//status VARCHAR(20), -- 'pending', 'accepted', 'rejected'
 
-/*
-import java.net.*;
-String ipAddress = InetAddress.getLocalHost().getHostAddress();
-
-import java.util.UUID;
-
-String roomId = UUID.randomUUID().toString().substring(0, 8); // example: abc123ef
-String meetingUrl = "http://" + ipAddress + ":8080/call?room=" + roomId;
-http://192.168.159.108:8080/call?room=abc123ef
-const urlParams = new URLSearchParams(window.location.search);
-const roomId = urlParams.get("room");
-
-if (roomId) {
-  // Use roomId as part of your WebSocket or signaling logic
-  // e.g., signalingSocket.send({room: roomId})
-}
-
-*/
