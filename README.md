@@ -59,7 +59,7 @@ vplay/
 ├── pom.xml               # Maven configuration
 ├── index.html            # Entry point
 └── jars.txt              # List of used jar files
-
+bash'''
 
 ---
 
