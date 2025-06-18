@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vplay</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+     <header>
+        <h1> Welcome To <span class = "highlight"> Vplay </span> </h1>
+     </header>
+     
+     <section class = "auth-section">
+            <div class="auth-box">
+                    <h2> Login/Register </h2>
+                    <form id = "LoginForm">
+                           <input type="text" id = "userName" name="userName" placeholder="UserName" required><br>
+                           <input type="password" id = "password" name="password" placeholder="Password" required><br>
+                            <button type="submit">Login</button>
+                    </form>
+                      <p>Don't have an account? <a href="html/register.html">Register here</a></p>
+            </div>
+     </section>
+     <div class="chatbot-icon" onclick="openChatbot()">
+          <i class="fa-solid fa-robot"></i>
+     </div>
+     <div id="chatbot-popup" style="display:none; position:fixed; bottom:80px; right:20px; background:white; border:1px solid #ccc; padding:10px; width:300px; z-index:999;">
+                  <h3>Ask Me Anything</h3>
+                 <input type="text" id="chat-input" placeholder="Type your question" style="width: 100%;">
+                 <button onclick="askQuestion()">Ask</button>
+                  <p id="chat-answer"></p>
+     </div>
+     
+<script>
+function openChatbot() {
+    const popup = document.getElementById("chatbot-popup");
+    popup.style.display = (popup.style.display === "none") ? "block" : "none";
+}
+
+function askQuestion() {
+    const question = document.getElementById("chat-input").value;
+    fetch('/vplay/bot', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: 'question=' + encodeURIComponent(question)
+    })
+    .then(res => {
+        if (!res.ok) {
+            // If server error (status 500), throw text instead of parsing as JSON
+            return res.text().then(text => { throw new Error(text); });
+        }
+        return res.json();
+    })
+    .then(data => {
+        document.getElementById("chat-answer").innerText = "Answer: " + data.answer;
+    })
+    .catch(err => {
+        document.getElementById("chat-answer").innerText = "Error: " + err.message;
+        console.error("Fetch error:", err);
+    });
+}
+</script>
+
+   <script src="js/login.js?v=2"></script>
+    
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+com/vplay/App.class
+com/vplay/RegisterServlet.class
+com/vplay/MyServlet.class
+com/vplay/database/DatabaseConnection.class
+com/vplay/database/SQLQueries.class
+com/vplay/utils/PasswordHash.class
+com/vplay/utils/LuceneIndexer.class
+com/vplay/LoginServlet.class
+com/vplay/BotServlet.class
+com/vplay/utils/QAService.class

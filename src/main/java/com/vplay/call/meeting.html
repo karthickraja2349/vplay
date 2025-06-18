@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meeting</title>
+</head>
+<body>
+  <h2>Video Call</h2>
+  <video id="localVideo" autoplay muted></video>
+  <video id="remoteVideo" autoplay></video>
+  <br>
+  <button onclick="start()">Start</button>
+  <button onclick="call()">Call</button>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const roomId = params.get("room");
+
+    // Create WebSocket connection using roomId
+    const socket = new WebSocket(`ws://${location.host}/callConnect?room=${roomId}`);
+
+    socket.onopen = () => {
+      console.log("Connected to signaling server");
+    };
+
+    socket.onmessage = (event) => {
+      console.log("Message from server:", event.data);
+      // Handle signaling messages here (SDP/ICE)
+    };
+
+    socket.onerror = (err) => {
+      console.error("WebSocket error", err);
+    };
+
+    function start() {
+      // Start local media etc.
+    }
+
+    function call() {
+      // Initiate call
+    }
+  </script>
+</body>
+</html>
+
