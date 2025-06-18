@@ -35,29 +35,8 @@ VPlay is a Java-based web application designed to provide secure, interactive, r
 
 ---
 
---## 📁 Folder Structure
 
-vplay/
-├── css/                  # CSS files (styles.css, viewPage.css, etc.)
-├── html/                 # HTML pages (register.html, viewPage.html, etc.)
-├── js/                   # JavaScript files (call.js, login.js, etc.)
-├── src/
-│   └── main/java/com/vplay/
-│       ├── App.java
-│       ├── database/     # DB connection & queries
-│       ├── mail/         # Email handling
-│       ├── bot/          # Chatbot servlet
-│       ├── friend/       # Friend & request handlers
-│       ├── call/         # Call handling (WebSocket + servlet)
-│       ├── notification/ # Accept/reject notification logic
-│       └── utils/        # Lucene indexer, password hashing, QAService
-├── WEB-INF/
-│   ├── classes/          # Compiled .class files (same structure as src)
-│   └── lib/              # External dependencies (JARs)
-├── pom.xml               # Maven configuration
-├── index.html            # Entry point
-└── jars.txt              # List of used jar files
-
+<pre lang="markdown"><code>## 📁 Folder Structure ```bash vplay/ ├── css/ # CSS files (styles.css, viewPage.css, etc.) ├── html/ # HTML pages (register.html, viewPage.html, etc.) ├── js/ # JavaScript files (call.js, login.js, etc.) ├── src/ │ └── main/java/com/vplay/ │ ├── App.java │ ├── database/ # DB connection & queries │ ├── mail/ # Email handling │ ├── bot/ # Chatbot servlet │ ├── friend/ # Friend & request handlers │ ├── call/ # Call handling (WebSocket + servlet) │ ├── notification/ # Accept/reject notification logic │ └── utils/ # Lucene indexer, password hashing, QAService ├── WEB-INF/ │ ├── classes/ # Compiled .class files (same structure as src) │ └── lib/ # External dependencies (JARs) ├── pom.xml # Maven configuration ├── index.html # Entry point └── jars.txt # List of used jar files ``` </code></pre>
 
 ---
 
