@@ -82,6 +82,7 @@ vplay/
 - WebRTC
 - DJL (Deep Java Library) + BERT (for chatbot)
 - MySQL (for data persistence)
+- Java Mail Api(Jakarta)
 
 ---
 
