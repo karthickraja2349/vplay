@@ -2,6 +2,8 @@
 
 VPlay is a Java-based web application designed to provide secure, interactive, real-time communication between users through a friend-based system. It includes user registration, login, friend requests, notifications, and one-to-one call functionality—all managed with secure practices and a built-in chatbot powered by DJL and BERT for project-related queries.
 
+Demo video:https://drive.google.com/file/d/1KJHDYtCm1FuyE-m5bjhwXflhRLCl8h-M/view?usp=drive_link
+
 ---
 
 ## 🌐 Features
